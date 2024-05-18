@@ -1,0 +1,119 @@
+.cardContainer {
+  margin: none;
+  background-color: hsl(228, 28%, 20%);
+  border-radius: 5px;
+  width: 25%;
+  height: 35vh;
+}
+
+.cardContainer:hover {
+  cursor: pointer;
+  background-color: hsl(228, 28%, 25%);
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 5px;
+}
+
+.elements > * {
+  margin: 2px 0;
+  padding: 2px 0;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.facebookBorder {
+  border-top: 5px solid hsl(195, 100%, 50%);
+}
+
+.twitterBorder {
+  border-top: 5px solid hsl(203, 89%, 53%);
+}
+
+.instagramBorder {
+  position: relative;
+  border-top: 5px solid transparent;
+}
+
+.instagramBorder::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  border-radius: 5px 5px 0 0;
+}
+
+.youtubeBorder {
+  border-top: 5px solid hsl(348, 97%, 39%);
+}
+
+.img {
+  height: 25px;
+  width: 25px;
+  margin-right: 3px;
+}
+
+.profile {
+  font-weight: 600;
+  margin-left: 3px;
+  color: rgb(143, 143, 153);
+  font-size: 12px;
+}
+
+.numberContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 5px;
+}
+
+.number,
+.followers {
+  margin: 0;
+  padding: 0;
+}
+
+.number {
+  font-weight: 700;
+  color: white;
+  font-size: 70px;
+  letter-spacing: -3px;
+  margin-bottom: 0px;
+}
+
+.followers {
+  font-weight: 200;
+  font-size: 12px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-top: -20px;
+}
+
+.variation {
+  color: hsl(163, 72%, 41%);
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.variationDown {
+  color: hsl(356, 69%, 56%);
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+}
