@@ -1,17 +1,51 @@
+@import url('./styles/var.css');
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(to bottom, hsl(232, 19%, 15%), hsl(230, 17%, 14%));
+  /* color: rgba(255, 255, 255, 0.87); */
 
+  color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Light Theme Colors */
+  --color-bg-light: hsl(0, 0%, 100%);
+  --color-top-bg-light: hsl(225, 100%, 98%);
+  --color-card-bg-light: hsl(227, 47%, 96%);
+  --color-text-light: hsl(228, 12%, 44%);
+  --color-text-dark-light: hsl(230, 17%, 14%);
+  --color-chart-light: hsl(243, 51%, 70%);
+
+  /* Dark Theme Colors */
+  --color-bg-dark: hsl(230, 17%, 14%);
+  --color-top-bg-dark: hsl(232, 19%, 15%);
+  --color-card-bg-dark: hsl(228, 28%, 20%);
+  --color-text-dark: hsl(228, 34%, 66%);
+  --color-text-white: hsl(0, 0%, 100%);
+  --color-chart-dark: hsl(243, 51%, 70%);
 }
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-light);
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* body.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-white);
+} */
+
+
 
 /* a {
   font-weight: 500;
@@ -54,7 +88,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -65,4 +99,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

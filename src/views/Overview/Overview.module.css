@@ -6,10 +6,10 @@
 }
 
 .title {
+    color: var(--color-text);
     display: flex;
     justify-content:flex-start;
     align-items: flex-start;
-    color: white;
     font-weight: 700;
     font-size: 40px;
     margin-left: 20px;

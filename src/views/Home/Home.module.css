@@ -13,6 +13,18 @@
     margin-bottom: 30px;
 }
 
+.headerToggle {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    gap: 5px
+}
+
+.subtitle {
+    color: var(--color-subtext);
+}
+
 .headerText {
     display: flex;
     flex-direction: column;
@@ -27,13 +39,13 @@
 }
 
 .title {
-    color: white;
+    color: var(--color-text);
     font-weight: 800;
     font-size: 40px;
 }
 
 .subtitle {
-    color: rgb(170, 170, 179);
+    color: var(--color-subtext);
     font-weight: 700;
     font-size: 16px;
 }

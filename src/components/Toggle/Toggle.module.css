@@ -1,0 +1,28 @@
+.container{
+    background: var(--color-toggle-bg);
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.container:hover {
+    background: var(--color-toggle-hover);
+}
+
+.toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    transform: scale(.7);
+    border-radius: 15px;
+    background-color: var(--color-bg);
+    transition: left 0.5s, background-color 0.3s;
+}
+
+.toggle.dark {
+    left: 30px;
+}

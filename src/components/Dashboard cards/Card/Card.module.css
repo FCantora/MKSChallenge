@@ -1,6 +1,6 @@
 .cardContainer {
   margin: none;
-  background-color: hsl(228, 28%, 20%);
+  background-color: var(--color-card-bg);
   border-radius: 5px;
   width: 25%;
   height: 35vh;
@@ -8,7 +8,7 @@
 
 .cardContainer:hover {
   cursor: pointer;
-  background-color: hsl(228, 28%, 25%);
+  background-color: var(--color-card-bg-hover);
 }
 
 .elements {
@@ -69,7 +69,7 @@
 .profile {
   font-weight: 600;
   margin-left: 3px;
-  color: rgb(143, 143, 153);
+  color: var(--color-subtext);
   font-size: 12px;
 }
 
@@ -90,14 +90,14 @@
 
 .number {
   font-weight: 700;
-  color: white;
+  color: var(--color-text);
   font-size: 70px;
   letter-spacing: -3px;
   margin-bottom: 0px;
 }
 
 .followers {
-  font-weight: 200;
+  font-weight: 400;
   font-size: 12px;
   letter-spacing: 8px;
   text-transform: uppercase;

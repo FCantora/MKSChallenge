@@ -3,11 +3,16 @@
   flex-direction: column;
   justify-content: center;
   margin: none;
-  background-color: hsl(228, 28%, 20%);
+  background-color: var(--color-card-bg);
   border-radius: 5px;
   width: calc(25% - 20px);
   height: 20vh;
   margin-bottom: 5px;
+}
+
+.cardContainer:hover {
+  cursor: pointer;
+  background-color: var(--color-card-bg-hover);
 }
 
 .elements {
@@ -36,13 +41,13 @@
 
 .title {
   font-weight: 600;
-  color: rgb(212, 212, 213);
+  color: var(--color-subtext);
   font-size: 12px;
 }
 
 .number {
   font-weight: 700;
-  color: white;
+  color: var(--color-text);
   font-size: 30px;
   letter-spacing: -1px;
 }

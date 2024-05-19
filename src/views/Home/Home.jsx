@@ -1,4 +1,5 @@
 import { Cards } from "../../components/Dashboard cards/Cards/Cards"
+import { Toggle } from "../../components/Toggle/Toggle"
 import { Overview } from "../Overview/Overview"
 import styles from "./Home.module.css"
 
@@ -11,7 +12,10 @@ export const Home = () => {
           <h1 className={styles.title}>Social Media Dashboard</h1>
           <p className={styles.subtitle}>Total Followers: 23,004</p>
         </div>
-        <h1>Toggle</h1>
+        <div className={styles.headerToggle}>
+          <p className={styles.subtitle}>Dark Mode</p>
+          <Toggle />
+        </div>
       </div>
       <Cards />
       <Overview />
