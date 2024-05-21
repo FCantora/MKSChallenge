@@ -2,9 +2,9 @@
   margin: none;
   background-color: var(--color-card-bg);
   border-radius: 5px;
-  width: 100%;
-  max-width: 250px;
+  width: 250px;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .cardContainer:hover {
@@ -121,6 +121,7 @@
 
 @media screen and (max-width: 1300px) {
   .cardContainer {
+    width: 100%;
     max-width: unset;
   }
 }
