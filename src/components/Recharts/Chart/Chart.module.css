@@ -13,10 +13,9 @@
 
 .chart {
   background: var(--color-card-bg);
-  width: 75%;
+  width: 80%;
   border-radius: 15px;
   position: relative;
-  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,8 +27,9 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 100%;
+  width: 90%;
   height: 100%;
+  margin: 20px 0 20px;
 }
 
 .infoContainer h1 {
@@ -37,6 +37,7 @@
   font-weight: 700;
   font-size: 30px;
   text-align: left;
+  margin: 0;
 }
 
 .subtitle {
@@ -48,9 +49,9 @@
 
 .subtitle p {
   font-weight: 600;
-  margin-left: 10px;
+  margin: 10px;
   color: var(--color-subtext);
-  font-size: 12px;
+  font-size: 14px;
 }
 .button {
   position: absolute;
@@ -70,10 +71,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  width: 75%;
-  margin: 10px 0;
-  padding: 5px;
+  justify-content: space-between;
+  width: 80%;
+  height: min-content;
+  margin: 10px 0 20px;
 }
 
 .totalFollowers {
@@ -82,7 +83,7 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  margin: 10px;
+  margin-right: 5px;
 }
 
 .newFollowers {
@@ -91,6 +92,7 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  margin-right: 5px;
 }
 
 .newFollowersToday {
@@ -99,13 +101,48 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  margin-right: 5px;
 }
 
-.number {
+.numberTotal {
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-subtext);
   font-size: 46px;
-  margin-right: 10px;
+  margin: 0 15px 0 0;
+}
+
+.numberNew {
+  font-weight: 700;
+  color: hsl(163, 72%, 41%);
+  font-size: 46px;
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.firstLetter {
+  font-size: 16px;
+  font-weight: 400;
+  align-self: center;
+  margin-right: 5px;
+}
+
+.numberToday {
+  font-weight: 700;
+  color: hsl(163, 72%, 41%);
+  font-size: 46px;
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.numberTodayRed {
+  font-weight: 700;
+  color: hsl(356, 69%, 56%);
+  font-size: 46px;
+  margin: 0 15px 0 0;
+  display: flex;
+  align-items: center;
 }
 
 .text {
@@ -114,4 +151,43 @@
   font-weight: 300;
   text-align: start;
   text-wrap: wrap;
+  max-width: 120px;
+}
+
+.chartContainer {
+  background: var(--color-bg);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0 40px;
+}
+
+.chartContainer h2 {
+  color: var(--color-subtext);
+  font-weight: 400;
+  font-size: 24px;
+  margin: 30px 60px;
+}
+
+@media screen and (max-width: 1300px) {
+  .chart {
+    flex-wrap: wrap;
+  }
+
+  .chartInfo {
+    display: grid;
+    grid-template-areas: ". .";
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .chartInfo {
+    display: flex;
+    flex-direction: column;
+  }
 }

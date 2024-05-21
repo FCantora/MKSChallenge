@@ -10,7 +10,7 @@ export const Chart = ({ isOpen, onClose, platform, image, profile, followers, su
     const sumOfFollowers = (chartInfo) => {
         let sum = 0
         for (let i = 2; i < chartInfo.length; i++) {
-            if (chartInfo[i].followers !== null) {
+            if (chartInfo[i].followers) {
                 sum += chartInfo[i].followers;
             } else {
                 sum += chartInfo[i].subscribers;
@@ -32,42 +32,45 @@ export const Chart = ({ isOpen, onClose, platform, image, profile, followers, su
                     </div>
                     <div className={styles.chartInfo}>
                         <div className={styles.totalFollowers}>
-                            <p className={styles.number}>{followers !== null ? followers : subscribers}</p>
+                            <p className={styles.numberTotal}>{followers !== null ? followers : subscribers}</p>
                             <p className={styles.text}>{followers !== null ? 'Total followers' : 'Total subscribers'}</p>
                         </div>
                         <div className={styles.newFollowers}>
-                            <p className={styles.number}>{sumOfFollowers(chartInfo)}</p>
+                            <p className={styles.numberNew} ><span className={styles.firstLetter}>▲</span>{sumOfFollowers(chartInfo)}</p>
                             <p className={styles.text}>{followers !== null ? 'New followers in the past 10 days' : 'New subscribers in the past 10 days'}</p>
                         </div>
                         <div className={styles.newFollowersToday}>
-                            <p className={styles.number}>{lastDay}</p>
+                            <p className={followers ? styles.numberToday : styles.numberTodayRed}>{followers ? <span className={styles.firstLetter}>▲</span> : <span className={styles.firstLetter}>▼</span>}{lastDay}</p>
                             <p className={styles.text}>{followers !== null ? 'New followers today' : 'New subscribers today'}</p>
                         </div>
                     </div>
                 </div>
                 <button className={styles.button} onClick={onClose}>x</button>
-                <ResponsiveContainer width="100%" aspect={3}>
-                    <LineChart
-                        width={500}
-                        height={300}
-                        data={chartInfo}
-                        margin={{
-                            top: 5,
-                            right: 30,
-                            left: 20,
-                            bottom: 5,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="day" />
-                        <YAxis dataKey={followers !== null ? 'followers' : 'subscribers'} />
-                        <Tooltip />
-                        <Legend />
-                        <Line type="monotone" dataKey={followers !== null ? 'followers' : 'subscribers'} stroke="#8884d8" activeDot={{ r: 8 }} />
+                <div className={styles.chartContainer}>
+                    <h2>May 3 - May 12</h2>
+                    <ResponsiveContainer width="100%" aspect={5}>
+                        <LineChart
+                            width={500}
+                            height={300}
+                            data={chartInfo}
+                            margin={{
+                                top: 5,
+                                right: 30,
+                                left: 20,
+                                bottom: 5,
+                            }}
+                        >
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="day" />
+                            <YAxis dataKey={followers !== null ? 'followers' : 'subscribers'} />
+                            <Tooltip />
+                            {/* <Legend /> */}
+                            <Line type="monotone" dataKey={followers !== null ? 'followers' : 'subscribers'} stroke="#8884d8" activeDot={{ r: 8 }} />
 
-                    </LineChart>
+                        </LineChart>
 
-                </ResponsiveContainer>
+                    </ResponsiveContainer>
+                </div>
             </div>
         </div>
     )

@@ -55,11 +55,11 @@
     .header {
         flex-direction: column;
         align-items: flex-start;
+        margin-bottom: 0;
     }
-}
 
-@media screen and (max-width: 600px) {
-    .title {
-
+    .headerText {
+        padding-bottom: 25px;
+        border-bottom: 2px solid var(--color-card-bg-hover);
     }
 }
