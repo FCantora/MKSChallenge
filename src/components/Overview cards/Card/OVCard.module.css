@@ -5,9 +5,9 @@
   margin: none;
   background-color: var(--color-card-bg);
   border-radius: 5px;
-  width: calc(25% - 20px);
-  height: 20vh;
-  margin-bottom: 5px;
+  width: 100%;
+  max-width: 250px;
+  height: 130px;
 }
 
 .cardContainer:hover {
@@ -69,4 +69,10 @@
   font-size: 12px;
   font-weight: 600;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 1300px) {
+  .cardContainer {
+    max-width: unset;
+  }
 }

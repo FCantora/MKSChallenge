@@ -1,0 +1,117 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+  border-radius: 1rem;
+  place-items: center;
+}
+
+.chart {
+  background: var(--color-card-bg);
+  width: 75%;
+  border-radius: 15px;
+  position: relative;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.infoContainer h1 {
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 30px;
+  text-align: left;
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.subtitle p {
+  font-weight: 600;
+  margin-left: 10px;
+  color: var(--color-subtext);
+  font-size: 12px;
+}
+.button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 9px;
+  cursor: pointer;
+  border: none;
+  margin: 5px 5px;
+  background: none;
+  color: var(--color-text);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.chartInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 75%;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.totalFollowers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 10px;
+}
+
+.newFollowers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.newFollowersToday {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.number {
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: 46px;
+  margin-right: 10px;
+}
+
+.text {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 300;
+  text-align: start;
+  text-wrap: wrap;
+}

@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import styles from './Card.module.css'
+import styles from './OVCard.module.css'
 
 
-export const Card = ({ platform, image, interactions }) => {
+export const OVCard = ({ platform, image, interactions }) => {
     return (
         <>
             {interactions.map((interaction) => (
@@ -15,11 +15,10 @@ export const Card = ({ platform, image, interactions }) => {
                         <div className={styles.content}>
                             <h1 className={styles.number}>{interaction.value}</h1>
                             {
-                                platform === 'youtube' || interaction.variation === '2%'
+                                platform === 'Youtube' || interaction.variation === '2%'
                                     ? <p className={styles.variationDown}>▼{interaction.variation}</p>
                                     : <p className={styles.variation}>▲{interaction.variation}</p>
                             }
-                            
                         </div>
                     </div>
                 </div>

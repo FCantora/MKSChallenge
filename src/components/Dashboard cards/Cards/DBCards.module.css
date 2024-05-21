@@ -1,0 +1,23 @@
+.cardsContainer {
+  /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; */
+  display: grid;
+  grid-template-areas: ". . . .";
+  padding: 10px;
+  gap: 20px;
+}
+
+@media screen and (max-width: 1300px) {
+  .cardsContainer {
+    grid-template-areas: ". ." ". .";
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cardsContainer {
+    grid-template-areas: "." "." "." ".";
+  }
+}

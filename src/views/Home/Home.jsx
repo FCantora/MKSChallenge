@@ -1,10 +1,27 @@
-import { Cards } from "../../components/Dashboard cards/Cards/Cards"
+/* eslint-disable no-unused-vars */
+import { useState } from "react"
+import { DBCards } from "../../components/Dashboard cards/Cards/DBCards"
 import { Toggle } from "../../components/Toggle/Toggle"
 import { Overview } from "../Overview/Overview"
 import styles from "./Home.module.css"
+import { Charts } from "../../components/Recharts/Charts/Charts"
 
 
 export const Home = () => {
+
+  const [showModal, setShowModal] = useState(false);
+  const [keyToRender, setKeyToRender] = useState(null);
+
+  const modalHandler = (platform) => {
+    setShowModal(true);
+    setKeyToRender(platform)
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
+    setKeyToRender(null);
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -17,7 +34,12 @@ export const Home = () => {
           <Toggle />
         </div>
       </div>
-      <Cards />
+      <DBCards onClick={modalHandler} />
+      {
+        keyToRender !== null
+          ? <Charts isOpen={showModal} onClose={closeModal} platformToRender={keyToRender} />
+          : null
+      }
       <Overview />
     </div>
   )

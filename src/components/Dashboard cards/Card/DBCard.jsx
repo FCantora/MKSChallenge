@@ -1,31 +1,28 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-// import React from 'react'
 
-import styles from './Card.module.css'
+import styles from './DBCard.module.css'
 
-export const Card = ({ platform, image, profile, followers, subscribers, variation }) => {
+export const DBCard = ({ platform, image, profile, followers, subscribers, variation, onClick }) => {
 
   const getBorderClass = (platform) => {
     switch (platform) {
-        case 'facebook':
-            return styles.facebookBorder;
-        case 'twitter':
-            return styles.twitterBorder;
-        case 'instagram':
-            return styles.instagramBorder;
-        case 'youtube':
-            return styles.youtubeBorder;
-        default:
-            return '';
+      case 'Facebook':
+        return styles.facebookBorder;
+      case 'Twitter':
+        return styles.twitterBorder;
+      case 'Instagram':
+        return styles.instagramBorder;
+      case 'Youtube':
+        return styles.youtubeBorder;
+      default:
+        return '';
     }
-};
+  };
 
   const borderClass = getBorderClass(platform);
 
   return (
-    <div className={`${styles.cardContainer} ${borderClass}`}>
+    <div className={`${styles.cardContainer} ${borderClass}`} onClick={() => onClick(platform)}>
       <div className={styles.elements}>
         <div className={styles.cardHeader}>
           <img className={styles.img} src={image} alt={platform} />
