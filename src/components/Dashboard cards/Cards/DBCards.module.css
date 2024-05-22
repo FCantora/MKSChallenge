@@ -1,9 +1,4 @@
 .cardsContainer {
-  /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center; */
   display: grid;
   grid-template-areas: ". . . .";
   padding: 10px;

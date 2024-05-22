@@ -6,14 +6,14 @@ export const OVCard = ({ platform, image, interactions }) => {
     return (
         <>
             {interactions.map((interaction) => (
-                <div key={`${interaction.type} ${platform}`} className={styles.cardContainer}>
-                    <div className={styles.elements}>
+                <div key={`${interaction.type} ${platform}`} className={styles.container}>
+                    <div className={styles.card}>
                         <div className={styles.header}>
-                            <p className={styles.title}>{interaction.type}</p>
-                            <img src={image} alt={platform} className={styles.img}></img>
+                            <p>{interaction.type}</p>
+                            <img src={image} alt={platform}></img>
                         </div>
-                        <div className={styles.content}>
-                            <h1 className={styles.number}>{interaction.value}</h1>
+                        <div className={styles.data}>
+                            <h1>{interaction.value}</h1>
                             {
                                 platform === 'Youtube' || interaction.variation === '2%'
                                     ? <p className={styles.variationDown}>▼{interaction.variation}</p>

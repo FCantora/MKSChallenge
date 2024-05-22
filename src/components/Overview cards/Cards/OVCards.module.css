@@ -1,9 +1,4 @@
-.cardsContainer {
-    /* display: flex;
-    flex-direction: row; */
-    /* align-items: center; */
-    /* justify-content: space-between; */
-    /* flex-wrap: wrap; */
+.container {
     display: grid;
     grid-template-areas: ". . . .";
     padding: 10px;
@@ -12,13 +7,13 @@
 }
 
 @media screen and (max-width: 1300px) {
-    .cardsContainer {
+    .container {
       grid-template-areas: ". ." ". .";
     }
   }
   
   @media screen and (max-width: 600px) {
-    .cardsContainer {
+    .container {
       grid-template-areas: "." "." "." ".";
     }
   }

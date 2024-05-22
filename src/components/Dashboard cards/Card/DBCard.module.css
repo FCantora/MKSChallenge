@@ -1,4 +1,4 @@
-.cardContainer {
+.container {
   margin: none;
   background-color: var(--color-card-bg);
   border-radius: 5px;
@@ -7,12 +7,12 @@
   box-sizing: border-box;
 }
 
-.cardContainer:hover {
+.container:hover {
   cursor: pointer;
   background-color: var(--color-card-bg-hover);
 }
 
-.elements {
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,7 @@
   width: 100%;
 }
 
-.elements > * {
+.card > * {
   margin: 2px 0;
   padding: 2px 0;
 }
@@ -60,20 +60,20 @@
   border-top: 5px solid hsl(348, 97%, 39%);
 }
 
-.img {
+.cardHeader img {
   height: 25px;
   width: 25px;
   margin-right: 3px;
 }
 
-.profile {
+.cardHeader p {
   font-weight: 600;
   margin-left: 3px;
   color: var(--color-subtext);
   font-size: 12px;
 }
 
-.numberContainer {
+.data {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,13 +82,13 @@
   padding: 5px;
 }
 
-.number,
-.followers {
+.data h1,
+.data h2 {
   margin: 0;
   padding: 0;
 }
 
-.number {
+.data h1 {
   font-weight: 700;
   color: var(--color-text);
   font-size: 70px;
@@ -96,7 +96,7 @@
   margin-bottom: 0px;
 }
 
-.followers {
+.data h2 {
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 8px;
@@ -120,7 +120,7 @@
 }
 
 @media screen and (max-width: 1300px) {
-  .cardContainer {
+  .container {
     width: 100%;
     max-width: unset;
   }

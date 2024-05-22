@@ -1,14 +1,33 @@
 /* eslint-disable react/prop-types */
-import { Chart } from "../Chart/Chart"
 
 import { data } from "../../../Data/Data"
+import { Chart } from "../Chart.jsx/Chart"
+import { Rechart } from "../Rechart/Rechart"
 
-export const Charts = ({ isOpen, onClose, platformToRender }) => {
+import styles from "./Charts.module.css"
+
+export const Charts = ({ onClose, platformToRender }) => {
 
     const dataForChart = data.find((data) => data.platform === platformToRender)
 
+    const { chartInfo } = dataForChart
+
+    const sumOfFollowers = (chartInfo) => {
+        let sum = 0
+        for (let i = 2; i < chartInfo.length; i++) {
+            if (chartInfo[i].followers) {
+                sum += chartInfo[i].followers;
+            } else {
+                sum += chartInfo[i].subscribers;
+            }
+        }
+        return sum;
+    }
+
+    const lastDay = chartInfo[chartInfo.length - 1].day
+
     return (
-        <div>
+        <div className={styles.container}>
             <Chart
                 key={dataForChart.platform}
                 platform={dataForChart.platform}
@@ -16,12 +35,12 @@ export const Charts = ({ isOpen, onClose, platformToRender }) => {
                 profile={dataForChart.profile}
                 followers={dataForChart.followers ? dataForChart.followers : null}
                 subscribers={dataForChart.subscribers ? dataForChart.subscribers : null}
-                variation={dataForChart.variation}
-                interactions={dataForChart.interactions}
-                chartInfo={dataForChart.chartInfo}
-                isOpen={isOpen}
-                onClose={onClose}
+                chartInfo={chartInfo}
+                sumOfFollowers={sumOfFollowers}
+                lastDay={lastDay}
             />
+            <button onClick={onClose}>x</button>
+            <Rechart chartInfo={chartInfo} followers={dataForChart.followers ? dataForChart.followers : null} />
         </div>
     )
 }

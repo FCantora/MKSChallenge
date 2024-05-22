@@ -7,7 +7,7 @@ import styles from "./OVCards.module.css"
 export const OVCards = () => {
 
     return (
-        <div className={styles.cardsContainer}>
+        <div className={styles.container}>
             {data.map((data) => (
                 <OVCard
                     key={data.platform}

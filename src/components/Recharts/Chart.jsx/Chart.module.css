@@ -1,28 +1,4 @@
 .container {
-  background-color: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  padding: 1rem;
-  border-radius: 1rem;
-  place-items: center;
-}
-
-.chart {
-  background: var(--color-card-bg);
-  width: 80%;
-  border-radius: 15px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.infoContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -32,7 +8,7 @@
   margin: 20px 0 20px;
 }
 
-.infoContainer h1 {
+.container h1 {
   color: var(--color-text);
   font-weight: 700;
   font-size: 30px;
@@ -53,21 +29,8 @@
   color: var(--color-subtext);
   font-size: 14px;
 }
-.button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 8px 9px;
-  cursor: pointer;
-  border: none;
-  margin: 5px 5px;
-  background: none;
-  color: var(--color-text);
-  font-size: 20px;
-  font-weight: 400;
-}
 
-.chartInfo {
+.data {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -154,39 +117,19 @@
   max-width: 120px;
 }
 
-.chartContainer {
-  background: var(--color-bg);
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0 0 40px;
-}
-
-.chartContainer h2 {
-  color: var(--color-subtext);
-  font-weight: 400;
-  font-size: 24px;
-  margin: 30px 60px;
-}
-
 @media screen and (max-width: 1300px) {
-  .chart {
+  .container {
     flex-wrap: wrap;
   }
 
-  .chartInfo {
+  .data {
     display: grid;
     grid-template-areas: ". .";
   }
 }
 
 @media screen and (max-width: 850px) {
-  .chartInfo {
+  .data {
     display: flex;
     flex-direction: column;
   }

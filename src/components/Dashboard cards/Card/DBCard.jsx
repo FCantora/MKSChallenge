@@ -22,17 +22,17 @@ export const DBCard = ({ platform, image, profile, followers, subscribers, varia
   const borderClass = getBorderClass(platform);
 
   return (
-    <div className={`${styles.cardContainer} ${borderClass}`} onClick={() => onClick(platform)}>
-      <div className={styles.elements}>
+    <div className={`${styles.container} ${borderClass}`} onClick={() => onClick(platform)}>
+      <div className={styles.card}>
         <div className={styles.cardHeader}>
-          <img className={styles.img} src={image} alt={platform} />
-          <p className={styles.profile}>{profile}</p>
+          <img src={image} alt={platform} />
+          <p>{profile}</p>
         </div>
-        <div className={styles.numberContainer}>
+        <div className={styles.data}>
           {
             followers
-              ? <><h1 className={styles.number}> {followers} </h1> <h2 className={styles.followers}>Followers</h2></>
-              : <><h1 className={styles.number}> {subscribers} </h1> <h2 className={styles.followers}>Subscribers</h2></>
+              ? <><h1>{followers}</h1> <h2>Followers</h2></>
+              : <><h1>{subscribers}</h1> <h2>Subscribers</h2></>
           }
         </div>
         {

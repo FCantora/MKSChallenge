@@ -3,9 +3,9 @@ import { useState } from "react"
 import { DBCards } from "../../components/Dashboard cards/Cards/DBCards"
 import { Toggle } from "../../components/Toggle/Toggle"
 import { Overview } from "../Overview/Overview"
-import styles from "./Home.module.css"
-import { Charts } from "../../components/Recharts/Charts/Charts"
+import { Modal } from "../../components/Modal/Modal"
 
+import styles from "./Home.module.css"
 
 export const Home = () => {
 
@@ -26,18 +26,18 @@ export const Home = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.headerText}>
-          <h1 className={styles.title}>Social Media Dashboard</h1>
-          <p className={styles.subtitle}>Total Followers: 23,004</p>
+          <h1>Social Media Dashboard</h1>
+          <p>Total Followers: 23,004</p>
         </div>
         <div className={styles.headerToggle}>
-          <p className={styles.subtitle}>Dark Mode</p>
+          <p>Dark Mode</p>
           <Toggle />
         </div>
       </div>
       <DBCards onClick={modalHandler} />
       {
         keyToRender !== null
-          ? <Charts isOpen={showModal} onClose={closeModal} platformToRender={keyToRender} />
+          ? <Modal isOpen={showModal} onClose={closeModal} platformToRender={keyToRender} />
           : null
       }
       <Overview />
